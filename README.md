@@ -8,28 +8,35 @@ http://norvig.com/lispy.html
 Usage
 -----
 
-	$ ruby lisby.rb 
-	lisby> (cons 1 (list 2 3 4 5 6))
-	(1 2 3 4 5 6)
+$ ruby lisby.rb
+lisby> ...type lisp forms here...
+...results here...
+
+
+Special forms and syntactic constructions
+-----------------------------------------
+
 	lisby> 3
 	3
 	lisby> 4.5
 	4.5
+	lisby> (quote apple)
+	apple
 	lisby> (define sqr (lambda (n) (* n n)))    
 	#<Proc:0x00000100a198d8@lisby.rb:66 (lambda)>
 	lisby> (sqr 5)
 	25
-	lisby> (equal? 5 5)
-	true
-	lisby> (length (list 1 2 3 4 5))
+	lisby> (set! x 5)
 	5
-	lisby> (cdr (list 1 2 3))
-	(2 3)
-	lisby> (car (quote (1 2 3 4 5)))
-	1
+	lisby> x
+	5
+	lisby> (if (> x 0) (quote positive) (quote negative))
+	positive
+	lisby> (begin (set! x 2) (set! y 5) (* x y))
+	10
 
 Implemented Scheme functions
------
+----------------------------
 	;; +
 	lisby> (+ 1 1.5)
 	2.5
@@ -126,9 +133,9 @@ Notes
 
 - Various little things result in errors.
 
-- ;; this example from Norvig's site overflows the stack  
-lisby> (define count (lambda (item L) (if L (+ (equal? item (first L)) (count item (rest L))) 0)))  
-lisby> (count 0 (list 0 1 2 3 0 0))
+- This example from Norvig's site overflows the stack  
+       lisby> (define count (lambda (item L) (if L (+ (equal? item (first L)) (count item (rest L))) 0)))  
+       lisby> (count 0 (list 0 1 2 3 0 0))
 
 - There is some rudimentary error handling, but it's still super basic
 

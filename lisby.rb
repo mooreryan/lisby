@@ -56,7 +56,7 @@ def evaluate x, env
     evaluate((if evaluate test, env; conseq; else; alt; end), env)
   elsif x[0] == 'set!'
     _, var, expr = x
-    env.index( var )[var] = evaluate expr, env
+    env[var] = evaluate expr, env
   elsif x[0] == 'define'
     _, var, expr = x
     env[var] = evaluate expr, env
@@ -64,7 +64,8 @@ def evaluate x, env
     _, vars, expr = x
     lambda { |*args| evaluate( expr, Env.new( vars, args, env )) }
   elsif x[0] == 'begin'
-    expr.drop( 1 ).each do |expr|
+    val = nil
+    x.drop( 1 ).each do |expr|
       val = evaluate( expr, env )
     end
     val
