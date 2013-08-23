@@ -41,7 +41,12 @@ end
 # Evaluate an expression in an environment.
 def evaluate x, env
   if x.instance_of? String
-    env.find( x )[x]
+    begin 
+      env.find( x )[x]
+    rescue
+      puts "\nvar ref rescue!"
+      puts "thing evaluated: #{x}"
+    end
   elsif !x.instance_of? Array
     x
   elsif x[0] == 'quote'
@@ -65,9 +70,15 @@ def evaluate x, env
     end
     val
   else
-    exprs = x.map { |expr| evaluate expr, env }
-    procedure = exprs.shift
-    procedure.call *exprs
+    begin
+      exprs = x.map { |expr| evaluate expr, env }
+      procedure = exprs.shift
+      procedure.call *exprs
+    rescue
+      puts "\nproc call rescue!"
+      puts "exprs: #{exprs}"
+      puts "proc: #{x.first} -- #{procedure}"
+    end
   end
 end
 
