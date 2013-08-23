@@ -2,7 +2,7 @@ lisby
 =====
 
 Lisp interpreter written in Ruby, based off of Peter Norvig's Lispy Scheme interpreter in Python.
-Currently it's more or less just a direct port of Norvig's into Ruby, that I did to learn more about interpreters, but more features may come.
+Currently, it's more or less just a direct port of Norvig's into Ruby that I did to learn more about interpreters, but more features may come.
 
 Original: http://norvig.com/lispy.html
 
