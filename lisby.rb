@@ -25,7 +25,6 @@ def add_globals env
   operators.each { |op| env[op.to_s] = lambda { |x,y| x.send op, y } }
   env.update( { 'equal?' => lambda { |x,y| x.equal? y},
                 '=' => lambda { |x,y| x.equal? y },
-                'eql?' => lambda { |x,y| x.eql? y},
                 'length' => lambda { |x| x.length },
                 'cons' => lambda { |elem, arr| arr.unshift elem },
                 'car' => lambda { |arr| arr.first },
