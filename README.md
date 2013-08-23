@@ -16,7 +16,7 @@ Usage
 In action!
 ----------
 
-
+	$ ruby lisby.rb
 	lisby> 3
 	3
 	lisby> 4.5
