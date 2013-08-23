@@ -13,8 +13,9 @@ Usage
 	...results here...
 
 
-Special forms and syntactic constructions
------------------------------------------
+In action!
+----------
+
 
 	lisby> 3
 	3
