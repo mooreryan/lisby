@@ -8,9 +8,9 @@ http://norvig.com/lispy.html
 Usage
 -----
 
-$ ruby lisby.rb
-lisby> ...type lisp forms here...
-...results here...
+	$ ruby lisby.rb
+	lisby> ...type lisp forms here...
+	...results here...
 
 
 Special forms and syntactic constructions
@@ -134,8 +134,8 @@ Notes
 - Various little things result in errors.
 
 - This example from Norvig's site overflows the stack  
-       lisby> (define count (lambda (item L) (if L (+ (equal? item (first L)) (count item (rest L))) 0)))  
-       lisby> (count 0 (list 0 1 2 3 0 0))
+    lisby> (define count (lambda (item L) (if L (+ (equal? item (first L)) (count item (rest L))) 0)))  
+    lisby> (count 0 (list 0 1 2 3 0 0))
 
 - There is some rudimentary error handling, but it's still super basic
 
