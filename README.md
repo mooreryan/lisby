@@ -31,61 +31,61 @@ Usage
 Implemented Scheme functions
 -----
 
-+  
+-+  
 	lisby> (+ 1 1.5)
 	2.5
--  
-*  
-/  
->  
+- -  
+-*  
+-/  
+->  
 	lisby> (> 4 2)
 	true
-<  
->=  
-<=  
-=  
+-<  
+->=  
+-<=  
+-=  
 	lisby> (= 5 3)
 	false
-append  
+-append  
 	lisby> (append (list 1 2 3) (quote (7 6 5)))
 	(1 2 3 7 6 5)
-car  
+-car  
 	lisby> (car (quote (1 2 3 4 5)))
 	1
-cdr  
+-cdr  
 	lisby> (cdr (list 1 2 3))
 	(2 3)
-cons  
+-cons  
 	lisby> (cons 1 (list 2 3 4 5 6))
 	(1 2 3 4 5 6)
 
 	;; consing something on to an empty list like so:
 	lisby> (cons 1 (list))
 	(1)
-eql?  
-equal?  
-length  
+-eql?  
+-equal?  
+-length  
 	lisby> (length (quote (1 2 3)))
 	3
-list  
+-list  
 	lisby> (list)
 	()
 	
 	lisby> (list 1 2 3)
 	(1 2 3)
-list?  
+-list?  
 	lisby> (list? (lambda (x) (quote x)))
 	false
 	
 	lisby> (list? (list 1 2))
 	true
-null?  
+-null?  
 	lisby> (null? (list))
 	true
 
 	lisby> (null? (quote (1 2 3)))
 	false
-symbol?  
+-symbol?  
 	lisby> (symbol? (quote z))
 	true
 
