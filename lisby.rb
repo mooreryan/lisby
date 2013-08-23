@@ -21,7 +21,7 @@ end
 
 # Add some Scheme standard procedures to an environment.
 def add_globals env
-  operators = [:+, :-, :*, :/, :>, :<, :>=, :<=, :==]
+  operators = [:+, :-, :*, :/, :>, :<, :>=, :<=]
   operators.each { |op| env[op.to_s] = lambda { |x,y| x.send op, y } }
   env.update( { 'equal?' => lambda { |x,y| x.equal? y},
                 '=' => lambda { |x,y| x.equal? y },
